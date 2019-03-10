@@ -1,0 +1,52 @@
+# Project: 项目1
+# Makefile created by Dev-C++ 5.7.1
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Chesspad.o Game.o HumanChesser.o Judge.o main.o Resultdisplay.o KeyboardConsole.o AIChesser.o 未命名1.o AI.o
+LINKOBJ  = Chesspad.o Game.o HumanChesser.o Judge.o main.o Resultdisplay.o KeyboardConsole.o AIChesser.o 未命名1.o AI.o
+LIBS     = -L"D:/C++/Dev-C++编程软件/Dev-Cpp/MinGW64/lib" -L"D:/C++/Dev-C++编程软件/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/C++/Dev-C++编程软件/Dev-Cpp/MinGW64/include" -I"D:/C++/Dev-C++编程软件/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/C++/Dev-C++编程软件/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
+CXXINCS  = -I"D:/C++/Dev-C++编程软件/Dev-Cpp/MinGW64/include" -I"D:/C++/Dev-C++编程软件/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/C++/Dev-C++编程软件/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"D:/C++/Dev-C++编程软件/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
+BIN      = FiveChessPro.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Chesspad.o: Chesspad.cpp
+	$(CPP) -c Chesspad.cpp -o Chesspad.o $(CXXFLAGS)
+
+Game.o: Game.cpp
+	$(CPP) -c Game.cpp -o Game.o $(CXXFLAGS)
+
+HumanChesser.o: HumanChesser.cpp
+	$(CPP) -c HumanChesser.cpp -o HumanChesser.o $(CXXFLAGS)
+
+Judge.o: Judge.cpp
+	$(CPP) -c Judge.cpp -o Judge.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Resultdisplay.o: Resultdisplay.cpp
+	$(CPP) -c Resultdisplay.cpp -o Resultdisplay.o $(CXXFLAGS)
+
+KeyboardConsole.o: KeyboardConsole.cpp
+	$(CPP) -c KeyboardConsole.cpp -o KeyboardConsole.o $(CXXFLAGS)
+
+AIChesser.o: AIChesser.cpp
+	$(CPP) -c AIChesser.cpp -o AIChesser.o $(CXXFLAGS)
+
+AI.o: AI.cpp
+	$(CPP) -c AI.cpp -o AI.o $(CXXFLAGS)
